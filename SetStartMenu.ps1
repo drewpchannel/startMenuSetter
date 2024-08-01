@@ -1,4 +1,14 @@
-﻿#get files from GitHub
+﻿if (Test-Path -Path .\sms)
+{
+    Remove-Item -Path .\sms -Recurse
+}
+
+if (Test-Path -Path .\sms.zip)
+{
+    Remove-Item -Path .\sms.zip
+}
+
+#get files from GitHub
 Invoke-WebRequest https://github.com/drewpchannel/startMenuSetter/archive/refs/heads/main.zip -OutFile .\sms.zip
 Expand-Archive .\sms.zip
 
