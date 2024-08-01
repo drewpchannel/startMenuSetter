@@ -18,3 +18,6 @@ Start-Sleep -s 10
 Remove-ItemProperty -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "LockedStartLayout" -Force
 Remove-ItemProperty -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "StartLayoutFile" -Force
 Stop-Process -ProcessName explorer -Force
+
+Remove-Item -Path .\sms -Recurse
+Remove-Item -Path .\sms.zip
