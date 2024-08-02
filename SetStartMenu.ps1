@@ -19,7 +19,7 @@ $filePath = Resolve-Path ".\sms\startMenuSetter-main"
 
 #Start menu editing
 Import-StartLayout -LayoutPath "$filePath\NewHireMenu.xml" -MountPath C:\
-if (-Not (Test-Path -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows"))
+if (-Not (Test-Path -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer"))
 {
     New-Item -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows" -Name Explorer
 }
