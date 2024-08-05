@@ -34,3 +34,5 @@ Remove-ItemProperty -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft
 Stop-Process -ProcessName explorer -Force
 
 Remove-Item -Path .\sms.zip
+
+exit 0
