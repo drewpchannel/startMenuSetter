@@ -24,8 +24,8 @@ if (-Not (Test-Path -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft
     New-Item -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows" -Name Explorer
 }
 
-Reg Add "HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer" /V LockedStartLayout /T REG_DWORD /D 1 /F
-Reg Add "HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer" /V StartLayoutFile /T REG_EXPAND_SZ /D "$filePath\NewHireMenu.xml" /F
+Set-ItemProperty -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "LockedStartLayout" -Value 1 -Type DWord -Force
+Set-ItemProperty -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "StartLayoutFile" -Value "$filePath\NewHireMenu.xml" -Type ExpandString -Force
 Stop-Process -ProcessName explorer -Force
 Start-Sleep -s 10
 #sleep is to let explorer finish restart b4 deleting reg keys
