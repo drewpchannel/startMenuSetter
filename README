@@ -1,4 +1,5 @@
 TODO:
   Append startmenu xml with taskbar settings
   
-  Remove leftover files to stop devices reporting back with errors
+Errors:
+<![LOG[[PowerShell] Fail, the details are {"Version":1,"SigningCode":649,"EncryptionCode":633,"SigningMsg":"(Success) AccountId:0aa874b6-c418-4f32-83cb-169489ab9c7a,PolicyId:1a946c96-1252-4cb6-bfa2-15321df912fa,Type:1,Enforce: Enforcement2. OSVersion:10.0.19045,AgentVersion:1.80.132.0. ","EncryptMsg":"run in legacy mode","ExecutionMsg":"Import-StartLayout : The term 'Import-StartLayout' is not recognized as the name of a cmdlet, function, script file, \r\nor operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and \r\ntry again.\r\nAt C:\\Program Files (x86)\\Microsoft Intune Management \r\nExtension\\Policies\\Scripts\\57710790-c6b1-450d-9034-f50e345775d9_1a946c96-1252-4cb6-bfa2-15321df912fa.ps1:23 char:1\r\n+ Import-StartLayout -LayoutPath \"$pathAfterExtract\\NewHireMenu.xml\" -M ...\r\n+ ~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (Import-StartLayout:String) [], CommandNotFoundException\r\n    + FullyQualifiedErrorId : Command
