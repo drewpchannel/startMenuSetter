@@ -1,5 +1,11 @@
 ﻿$treelineFilePath = "c:\treeline_files"
 
+#check for module, was throwing error in (possibly Audit) environment
+if (-Not (Get-Command Import-StartLayout -ErrorAction SilentlyContinue))
+{
+    Install-Module Import-StartLayout
+}
+
 #Setup Folder
 if (-not (Test-Path -Path $treelineFilePath))
 {
@@ -20,7 +26,7 @@ $SID = & "c:\treeline_files\startMenuSetter-main\SIDget\GetSID.ps1"
 $pathAfterExtract = "c:\treeline_files\startMenuSetter-main\"
 
 #Start menu editing
-Import-StartLayout -LayoutPath "$pathAfterExtract\NewHireMenu.xml" -MountPath C:\
+Import-StartLayout -LayoutPath "$pathAfterExtract\NewHireMenu.xml" -MountPath C:\ -ErrorAction SilentlyContinue
 if (-Not (Test-Path -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows\Explorer"))
 {
     New-Item -Path "Registry::HKEY_USERS\$SID\SOFTWARE\Policies\Microsoft\Windows" -Name Explorer
